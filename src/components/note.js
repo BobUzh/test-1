@@ -29,9 +29,19 @@ class Note extends Component {
   };
 
   isInput = () => {
-    this.setState({
-      isInput: true
-    });
+    if (!this.state.isInput) {
+      this.setState({
+        isInput: true
+      });
+    } else {
+      this.setState({
+        data: {
+          ...this.state.data,
+          ul: []
+        },
+        isInput: false
+      });
+    }
   };
 
   render() {
