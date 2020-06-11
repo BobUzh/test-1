@@ -5,6 +5,11 @@
 input {
   background-color: wheat !important;
 }
+
+button {
+  margin: 0 5px;
+}
+
 ul > li:nth-child(1) > div > .my-btn-group > .btn-up {
   display: none;
 }

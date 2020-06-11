@@ -45,6 +45,10 @@ class Note extends Component {
   };
 
   render() {
+    const btnSublistStyle = this.state.isInput
+      ? "btn btn-outline-danger"
+      : "btn btn-outline-success";
+
     return (
       <li className="list-group-item ">
         <div className="d-flex justify-content-between align-items-center">
@@ -68,18 +72,18 @@ class Note extends Component {
 
             <button
               type="button"
-              className="btn btn-outline-primary"
+              className={btnSublistStyle}
               onClick={this.isInput}
             >
-              {this.state.isInput ? "Delete Sublist" : "Add Sublist"}
+              {this.state.isInput ? "Remove Sublist" : "Add Sublist"}
             </button>
 
             <button
               type="button"
-              className="btn btn-outline-primary"
+              className="btn btn-outline-secondary"
               onClick={this.props.delEl}
             >
-              delete
+              Remove
             </button>
           </div>
         </div>

@@ -73,7 +73,7 @@ class List extends Component {
           />
           <button
             type="button"
-            className="btn btn-outline-primary"
+            className="btn btn-outline-success"
             onClick={this.addNote}
           >
             Add
