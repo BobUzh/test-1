@@ -14,18 +14,18 @@ class Note extends Component {
     });
   }
 
-  isInput = () => {
-    if (!this.state.isInput) {
-      this.setState({
-        isInput: true
-      });
-    } else {
+  changeSublist = () => {
+    if (this.state.isInput) {
       this.setState({
         data: {
           ...this.state.data,
           ul: []
         },
         isInput: false
+      });
+    } else {
+      this.setState({
+        isInput: true
       });
     }
   };
@@ -59,7 +59,7 @@ class Note extends Component {
             <button
               type="button"
               className={btnSublistStyle}
-              onClick={this.isInput}
+              onClick={this.changeSublist}
             >
               {this.state.isInput ? "Remove Sublist" : "Add Sublist"}
             </button>
