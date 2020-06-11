@@ -14,20 +14,6 @@ class Note extends Component {
     });
   }
 
-  addUl = () => {
-    const newList = {
-      id: Date.now(),
-      text: "Hello",
-      ul: []
-    };
-    this.setState({
-      data: {
-        ...this.state.data,
-        ul: [...this.state.data.ul, newList]
-      }
-    });
-  };
-
   isInput = () => {
     if (!this.state.isInput) {
       this.setState({
@@ -46,8 +32,8 @@ class Note extends Component {
 
   render() {
     const btnSublistStyle = this.state.isInput
-      ? "btn btn-outline-danger"
-      : "btn btn-outline-success";
+      ? "btn btn-danger"
+      : "btn btn-success";
 
     return (
       <li className="list-group-item ">
@@ -80,7 +66,7 @@ class Note extends Component {
 
             <button
               type="button"
-              className="btn btn-outline-secondary"
+              className="btn btn-secondary"
               onClick={this.props.delEl}
             >
               Remove
