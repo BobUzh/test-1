@@ -2,3 +2,17 @@
   font-family: sans-serif;
   text-align: center;
 }
+input {
+  background-color: wheat !important;
+}
+ul > li:nth-child(1) > div > .my-btn-group > .btn-up {
+  display: none;
+}
+
+ul > li:nth-last-child(2) > div > .my-btn-group > .btn-down {
+  display: none;
+}
+
+li {
+  list-style: none;
+}
