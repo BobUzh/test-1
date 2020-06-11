@@ -14,11 +14,13 @@ class List extends Component {
   }
 
   addNote = () => {
-    const newNote = { id: Date.now(), text: this.state.value, ul: [] };
-    this.setState({
-      list: [...this.state.list, newNote],
-      value: ""
-    });
+    if (this.state.value.trim() !== "") {
+      const newNote = { id: Date.now(), text: this.state.value, ul: [] };
+      this.setState({
+        list: [...this.state.list, newNote],
+        value: ""
+      });
+    }
   };
 
   setValue = e => {
@@ -28,7 +30,7 @@ class List extends Component {
   };
 
   deleteElement = id => {
-    const idx = this.state.list.findIndex(e => e.id == id);
+    const idx = this.state.list.findIndex(e => e.id === id);
     this.setState({
       list: [
         ...this.state.list.slice(0, idx),
@@ -38,7 +40,7 @@ class List extends Component {
   };
 
   changeList = (direction, id) => {
-    const idx = this.state.list.findIndex(e => e.id == id);
+    const idx = this.state.list.findIndex(e => e.id === id);
     if (direction < 0) {
       this.setState({
         list: [
